@@ -1,0 +1,22 @@
+# --- Segurança e Segredos ---
+.env
+
+# --- Ambiente Python (uv) ---
+.venv/
+__pycache__/
+*.py[cod]
+.python-version
+
+# --- Airflow & Astro CLI ---
+.astro/                  # Arquivos internos do Astro
+airflow-webserver.pid
+airflow_settings.yaml    # Configurações locais de conexões
+webserver_config.py
+airflow.cfg
+airflow.db               # Banco de dados local de teste
+logs/                    # Logs de execução das DAGs
+
+# --- Sistema e IDE ---
+.DS_Store                # Lixo de sistema (macOS)
+.vscode/                 # Configurações pessoais do editor (opcional)
+*.swp                    # Arquivos temporários do Linux/Vim
