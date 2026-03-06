@@ -8,9 +8,7 @@ USER root
 # 3. Copia os arquivos de definição do seu projeto local para o container
 COPY pyproject.toml uv.lock ./
 
-# O uv export garante que as versões sejam idênticas ao seu local
-# O --system instala onde o Airflow já está esperando
-RUN uv export --format requirements-txt > requirements.txt && \
-    uv pip install --system -r requirements.txt
+# O uv detectará o uv.lock na pasta e respeitará as versões ali contidas
+RUN uv pip install --system --no-cache -r pyproject.toml
 
 USER astro
